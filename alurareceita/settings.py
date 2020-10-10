@@ -65,10 +65,10 @@ WSGI_APPLICATION = 'alurareceita.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'alura_receita',
-        'USER': 'alura',
-        'PASSWORD': 'alura',
-        'HOST': 'localhost',
+        'NAME': os.getenv('DATABASE_NAME', 'alura_receita'),
+        'USER': os.getenv('DATABASE_USER', 'alura'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD', 'alura'),
+        'HOST': os.getenv('DATABASE_HOST', 'localhost'),
         'PORT': '5432'
     }
 }
